@@ -1,8 +1,5 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import pic01 from '../images/pic01.jpg'
-import pic02 from '../images/pic02.jpg'
-import pic03 from '../images/pic03.jpg'
 import ProfileImage from '../images/profile_pic.jpg'
 import Leader from '../images/leader.jpg'
 
@@ -79,7 +76,7 @@ class Main extends React.Component {
           className={`${this.props.article === 'contact' ? 'active' : ''} ${
             this.props.articleTimeout ? 'timeout' : ''
           }`}
-          style={{ display: 'none' }}
+          style={{ display: 'none', textAlign: 'center' }}
         >
           <h2 className="major">Contact</h2>
           <ul className="icons">
