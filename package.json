@@ -25,5 +25,13 @@
   },
   "devDependencies": {
     "prettier": "^1.19.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/swaroop325/swaroop_portfolio.git"
+  },
+  "bugs": {
+    "url": "https://github.com/swaroop325/swaroop_portfolio/issues"
+  },
+  "homepage": "https://github.com/swaroop325/swaroop_portfolio#readme"
 }
