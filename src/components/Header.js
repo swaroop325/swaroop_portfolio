@@ -9,7 +9,9 @@ const Header = props => (
     <div className="content">
       <div className="inner">
         <h1>Swaroop A S</h1>
-        <p>A passionate Mobile app developer</p>
+        <p>
+          Team Lead | React | Android | iOS | React Native | Tech Enthusiast |
+        </p>
       </div>
     </div>
     <nav>
