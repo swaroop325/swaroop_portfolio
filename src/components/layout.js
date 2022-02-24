@@ -47,7 +47,10 @@ const Layout = ({ children, location }) => {
                 property: 'og:url',
                 content: 'https://swaroop325.web.app/',
               },
-              { property: 'og:description', content: 'Swaroop A.S Portfolio Website' },
+              {
+                property: 'og:description',
+                content: 'Swaroop A.S Portfolio Website',
+              },
               { property: 'og:image', content: ProfileImage },
               { property: 'og:site_name', content: 'Swaroop Portfolio' },
             ]}

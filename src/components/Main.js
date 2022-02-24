@@ -51,7 +51,7 @@ class Main extends React.Component {
           {/* <span className="image main">
             <img src={pic02} alt="" />
           </span> */}
-          <p>Craftveda Technologies</p>
+          <p>Infosys Limited</p>
           <p></p>
           {close}
         </article>
@@ -67,7 +67,7 @@ class Main extends React.Component {
           <span className="image main">
             <img src={Leader} alt="" />
           </span>
-          <p>Living in Chennai</p>
+          <p>Living in Trivandrum, India</p>
           {close}
         </article>
 
