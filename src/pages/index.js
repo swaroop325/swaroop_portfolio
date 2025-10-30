@@ -10,6 +10,7 @@ import ProjectsSection from '../components/ProjectsSection'
 import CertificationsSection from '../components/CertificationsSection'
 import ContactSection from '../components/ContactSection'
 import SharingModal from '../components/SharingModal'
+import ScrollAssistant from '../components/ScrollAssistant'
 import { contact } from '../data/portfolioData'
 
 const IndexPage = () => {
@@ -82,6 +83,9 @@ const IndexPage = () => {
           zIndex: 9999,
         }}
       />
+
+      {/* Scroll Assistant - Quick navigation between sections */}
+      <ScrollAssistant />
 
       {/* Sharing Modal - Rendered at root level to avoid z-index issues */}
       <SharingModal

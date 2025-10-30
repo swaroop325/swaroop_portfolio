@@ -1,0 +1,33 @@
+/* Scroll Assistant Tooltip Hover Effect */
+.scroll-assistant-tooltip {
+  position: absolute;
+  right: 100%;
+  margin-right: 0.75rem;
+  background: rgba(20, 20, 40, 0.95);
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+button:hover .scroll-assistant-tooltip {
+  opacity: 1;
+}
+
+/* Hide on mobile devices */
+@media (max-width: 768px) {
+  .scroll-assistant-container {
+    display: none !important;
+  }
+}
+
+/* Show on tablet and up, but adjust position */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .scroll-assistant-container {
+    right: 1rem !important;
+  }
+}

@@ -161,7 +161,6 @@ const HeroSection = ({ onOpenShareModal }) => {
                 gap: '0.5rem',
               }}
             >
-              <span>📲</span>
               Share Contact
             </motion.button>
           </motion.div>
