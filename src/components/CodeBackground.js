@@ -1,9 +1,16 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 const CodeBackground = () => {
   const canvasRef = useRef(null)
+  const [isClient, setIsClient] = useState(false)
 
   useEffect(() => {
+    setIsClient(true)
+  }, [])
+
+  useEffect(() => {
+    if (!isClient) return
+
     const canvas = canvasRef.current
     if (!canvas) return
 
@@ -112,7 +119,23 @@ const CodeBackground = () => {
       cancelAnimationFrame(animationFrameId)
       window.removeEventListener('resize', handleResize)
     }
-  }, [])
+  }, [isClient])
+
+  if (!isClient) {
+    return (
+      <div
+        style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          zIndex: -2,
+          backgroundColor: '#0a0a19',
+        }}
+      />
+    )
+  }
 
   return (
     <>

@@ -15,6 +15,8 @@ const IndexPage = () => {
   const { scrollYProgress } = useScroll()
 
   useEffect(() => {
+    if (typeof window === 'undefined') return
+
     const handleScroll = () => {
       const sections = ['hero', 'experience', 'skills', 'projects', 'certifications', 'contact']
       const scrollPosition = window.scrollY + window.innerHeight / 2
