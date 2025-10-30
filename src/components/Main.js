@@ -1,11 +1,13 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 
-import Leader from '../images/leader.jpg'
 import About from './About'
+import Certifications from './Certifications'
 import Contact from './Contact'
 import Intro from './Intro'
+import Projects from './Projects'
 import Work from './Work'
+
 class Main extends React.Component {
   render() {
     let close = (
@@ -34,6 +36,16 @@ class Main extends React.Component {
           articleTimeout={this.props.articleTimeout}
         />
         <About
+          close={close}
+          article={this.props.article}
+          articleTimeout={this.props.articleTimeout}
+        />
+        <Projects
+          close={close}
+          article={this.props.article}
+          articleTimeout={this.props.articleTimeout}
+        />
+        <Certifications
           close={close}
           article={this.props.article}
           articleTimeout={this.props.articleTimeout}

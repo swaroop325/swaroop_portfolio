@@ -4,14 +4,22 @@
   "version": "1.0.0",
   "author": "swaroop325",
   "dependencies": {
-    "gatsby": "^2.19.5",
-    "gatsby-plugin-manifest": "^2.2.38",
-    "gatsby-plugin-react-helmet": "^3.1.21",
-    "gatsby-plugin-sass": "^2.1.27",
-    "node-sass": "^4.13.1",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react-helmet": "^5.2.1"
+    "ajv": "^8.17.1",
+    "framer-motion": "^11.0.0",
+    "gatsby": "^5.13.0",
+    "gatsby-plugin-google-gtag": "^5.13.0",
+    "gatsby-plugin-image": "^3.13.0",
+    "gatsby-plugin-manifest": "^5.13.0",
+    "gatsby-plugin-react-helmet": "^6.13.0",
+    "gatsby-plugin-sass": "^6.13.0",
+    "gatsby-plugin-sharp": "^5.13.0",
+    "gatsby-source-filesystem": "^5.13.0",
+    "gatsby-transformer-sharp": "^5.13.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-ga4": "^2.1.0",
+    "react-helmet": "^6.1.0",
+    "sass": "^1.70.0"
   },
   "keywords": [
     "gatsby"

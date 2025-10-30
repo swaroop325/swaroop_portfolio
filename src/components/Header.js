@@ -1,20 +1,42 @@
 import PropTypes from 'prop-types'
 import React from 'react'
+import { motion } from 'framer-motion'
 
 const Header = props => (
   <header id="header" style={props.timeout ? { display: 'none' } : {}}>
-    <div className="logo">
+    <motion.div
+      className="logo"
+      initial={{ scale: 0 }}
+      animate={{ scale: 1 }}
+      transition={{ duration: 0.5, type: 'spring', stiffness: 260, damping: 20 }}
+    >
       <span className="icon fa-diamond"></span>
-    </div>
+    </motion.div>
     <div className="content">
       <div className="inner">
-        <h1>Swaroop A S</h1>
-        <p>| React | React Native | Cordova | Android | iOS | Azure |</p>
+        <motion.h1
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          Swaroop A.S
+        </motion.h1>
+        <motion.p
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+        >
+          Full Stack Developer | DevOps Enthusiast | Cloud Learner
+        </motion.p>
       </div>
     </div>
-    <nav>
+    <motion.nav
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: 0.6 }}
+    >
       <ul>
-        <li>
+        <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
           <button
             onClick={() => {
               props.onOpenArticle('intro')
@@ -22,8 +44,8 @@ const Header = props => (
           >
             Intro
           </button>
-        </li>
-        <li>
+        </motion.li>
+        <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
           <button
             onClick={() => {
               props.onOpenArticle('work')
@@ -31,8 +53,8 @@ const Header = props => (
           >
             Work
           </button>
-        </li>
-        <li>
+        </motion.li>
+        <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
           <button
             onClick={() => {
               props.onOpenArticle('about')
@@ -40,8 +62,26 @@ const Header = props => (
           >
             About
           </button>
-        </li>
-        <li>
+        </motion.li>
+        <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
+          <button
+            onClick={() => {
+              props.onOpenArticle('projects')
+            }}
+          >
+            Projects
+          </button>
+        </motion.li>
+        <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
+          <button
+            onClick={() => {
+              props.onOpenArticle('certifications')
+            }}
+          >
+            Certifications
+          </button>
+        </motion.li>
+        <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
           <button
             onClick={() => {
               props.onOpenArticle('contact')
@@ -49,9 +89,9 @@ const Header = props => (
           >
             Contact
           </button>
-        </li>
+        </motion.li>
       </ul>
-    </nav>
+    </motion.nav>
   </header>
 )
 
