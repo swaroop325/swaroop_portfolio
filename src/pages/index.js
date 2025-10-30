@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { motion, useScroll } from 'framer-motion'
 import Layout from '../components/layout'
 import CodeBackground from '../components/CodeBackground'
 import ModernNav from '../components/ModernNav'
@@ -9,9 +9,12 @@ import SkillsSection from '../components/SkillsSection'
 import ProjectsSection from '../components/ProjectsSection'
 import CertificationsSection from '../components/CertificationsSection'
 import ContactSection from '../components/ContactSection'
+import SharingModal from '../components/SharingModal'
+import { contact } from '../data/portfolioData'
 
 const IndexPage = () => {
   const [activeSection, setActiveSection] = useState('hero')
+  const [isShareModalOpen, setIsShareModalOpen] = useState(false)
   const { scrollYProgress } = useScroll()
 
   useEffect(() => {
@@ -37,6 +40,15 @@ const IndexPage = () => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  const contactData = {
+    name: 'Swaroop A.S.',
+    phone: contact.phone,
+    email: contact.email,
+    website: contact.website,
+    github: contact.github,
+    linkedin: 'https://www.linkedin.com/in/swaroop-as',
+  }
+
   return (
     <Layout location={typeof window !== 'undefined' ? window.location : {}}>
       <CodeBackground />
@@ -48,7 +60,7 @@ const IndexPage = () => {
         transition={{ duration: 1 }}
         style={{ position: 'relative', zIndex: 1 }}
       >
-        <HeroSection />
+        <HeroSection onOpenShareModal={() => setIsShareModalOpen(true)} />
         <ExperienceSection />
         <SkillsSection />
         <ProjectsSection />
@@ -69,6 +81,13 @@ const IndexPage = () => {
           scaleX: scrollYProgress,
           zIndex: 9999,
         }}
+      />
+
+      {/* Sharing Modal - Rendered at root level to avoid z-index issues */}
+      <SharingModal
+        isOpen={isShareModalOpen}
+        onClose={() => setIsShareModalOpen(false)}
+        contactData={contactData}
       />
     </Layout>
   )

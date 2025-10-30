@@ -4,6 +4,7 @@ import GFT from '../images/gft.jpeg'
 import CFT from '../images/cft.jpeg'
 import Infy from '../images/infy.jpeg'
 import ACT from '../images/activate.jpeg'
+import '../assets/css/experience-mobile.css'
 
 const ExperienceSection = () => {
   const ref = useRef(null)
@@ -111,9 +112,10 @@ const ExperienceSection = () => {
       ref={ref}
       style={{
         minHeight: '100vh',
-        padding: '6rem 2rem',
+        padding: '6rem 1rem',
         position: 'relative',
       }}
+      className="experience-section"
     >
       <div
         style={{
@@ -162,7 +164,7 @@ const ExperienceSection = () => {
               margin: '0 auto',
             }}
           >
-            5+ years building impactful solutions across government and enterprise
+            6+ years building impactful solutions across government and enterprise
           </p>
         </motion.div>
 
@@ -206,9 +208,10 @@ const ExperienceSection = () => {
                 style={{
                   display: 'grid',
                   gridTemplateColumns: exp.logo ? 'auto 1fr' : '1fr',
-                  gap: '2rem',
+                  gap: '1.5rem',
                   alignItems: 'start',
                 }}
+                className="exp-card-content"
               >
                 {exp.logo && (
                   <div
@@ -243,6 +246,7 @@ const ExperienceSection = () => {
                       flexWrap: 'wrap',
                       gap: '1rem',
                     }}
+                    className="exp-card-header"
                   >
                     <div>
                       <h3

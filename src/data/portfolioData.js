@@ -1,5 +1,5 @@
 // Centralized portfolio data
-export const professionalSummary = `Senior Full-Stack Engineer with 5+ years building scalable, secure systems for Singapore government agencies and enterprise clients. Integrate AI, DevOps, and cloud architecture to deliver impactful solutions. Embrace Servant Leadership approach and mentoring teams to achieve technical excellence.`
+export const professionalSummary = `Senior Full-Stack Engineer with 6+ years building scalable, secure systems for Singapore government agencies and enterprise clients. Integrate AI, DevOps, and cloud architecture to deliver impactful solutions. Embrace Servant Leadership approach and mentoring teams to achieve technical excellence.`
 
 export const experiences = [
   {
@@ -231,7 +231,7 @@ export const education = {
 export const contact = {
   phone: '+65-84116034',
   email: 'swaroopanand325@gmail.com',
-  website: 'swaroop.as',
+  website: 'swaroop325.web.app/',
   github: 'swaroop325',
   location: 'Singapore'
 }

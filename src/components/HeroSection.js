@@ -2,7 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import ProfileImage from '../images/profile.jpeg'
 
-const HeroSection = () => {
+const HeroSection = ({ onOpenShareModal }) => {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -31,8 +31,10 @@ const HeroSection = () => {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        padding: '2rem',
+        padding: '2rem 1rem',
+        paddingTop: '6rem',
         position: 'relative',
+        overflow: 'hidden',
       }}
     >
       <motion.div
@@ -67,13 +69,14 @@ const HeroSection = () => {
           <motion.h1
             variants={itemVariants}
             style={{
-              fontSize: 'clamp(2.5rem, 8vw, 5rem)',
+              fontSize: 'clamp(2rem, 7vw, 5rem)',
               fontWeight: 'bold',
               marginBottom: '1rem',
               background: 'linear-gradient(135deg, #fff, #00d4ff)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
-              lineHeight: '1.2',
+              lineHeight: '1.3',
+              wordBreak: 'keep-all',
             }}
           >
             I'm Swaroop
@@ -101,7 +104,7 @@ const HeroSection = () => {
               maxWidth: '600px',
             }}
           >
-            <strong>5+ years</strong> building scalable, secure systems for <strong>Singapore government agencies</strong> and enterprise clients.
+            <strong>6+ years</strong> building scalable, secure systems for <strong>Singapore government agencies</strong> and enterprise clients.
             <br />
             <span style={{ color: 'rgba(255, 255, 255, 0.7)', marginTop: '0.5rem', display: 'block' }}>
               DevOps Enthusiast | AI Integration | Cloud Architecture | Servant Leader
@@ -139,8 +142,8 @@ const HeroSection = () => {
               Get In Touch
             </motion.a>
 
-            <motion.a
-              href="#projects"
+            <motion.button
+              onClick={onOpenShareModal}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               style={{
@@ -153,11 +156,14 @@ const HeroSection = () => {
                 fontWeight: 'bold',
                 cursor: 'pointer',
                 textDecoration: 'none',
-                display: 'inline-block',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.5rem',
               }}
             >
-              View Projects
-            </motion.a>
+              <span>📲</span>
+              Share Contact
+            </motion.button>
           </motion.div>
 
           {/* Tech Stack Icons */}

@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 
 const ModernNav = ({ activeSection }) => {
   const [isScrolled, setIsScrolled] = useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   useEffect(() => {
     if (typeof window === 'undefined') return
@@ -19,6 +20,7 @@ const ModernNav = ({ activeSection }) => {
     const element = document.getElementById(sectionId)
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' })
+      setIsMobileMenuOpen(false) // Close mobile menu after navigation
     }
   }
 
@@ -118,6 +120,7 @@ const ModernNav = ({ activeSection }) => {
         <motion.button
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           style={{
             display: 'none',
             background: 'rgba(0, 212, 255, 0.2)',
@@ -126,12 +129,63 @@ const ModernNav = ({ activeSection }) => {
             padding: '0.5rem 1rem',
             color: '#00d4ff',
             cursor: 'pointer',
+            fontSize: '1rem',
           }}
           className="mobile-menu-btn"
         >
-          Menu
+          {isMobileMenuOpen ? '✕' : '☰'}
         </motion.button>
       </div>
+
+      {/* Mobile Menu Dropdown */}
+      {isMobileMenuOpen && (
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          style={{
+            position: 'absolute',
+            top: '100%',
+            left: 0,
+            right: 0,
+            background: 'rgba(10, 10, 25, 0.95)',
+            backdropFilter: 'blur(20px)',
+            borderBottom: '1px solid rgba(100, 200, 255, 0.2)',
+            padding: '1rem',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '0.5rem',
+          }}
+        >
+          {navItems.map((item) => (
+            <motion.button
+              key={item.id}
+              onClick={() => scrollToSection(item.id)}
+              whileTap={{ scale: 0.95 }}
+              style={{
+                padding: '1rem',
+                background:
+                  activeSection === item.id
+                    ? 'rgba(0, 212, 255, 0.2)'
+                    : 'transparent',
+                border:
+                  activeSection === item.id
+                    ? '1px solid rgba(0, 212, 255, 0.5)'
+                    : '1px solid rgba(255, 255, 255, 0.1)',
+                borderRadius: '8px',
+                color: activeSection === item.id ? '#00d4ff' : '#fff',
+                cursor: 'pointer',
+                fontSize: '1rem',
+                fontWeight: activeSection === item.id ? '600' : '400',
+                textAlign: 'left',
+                width: '100%',
+              }}
+            >
+              {item.label}
+            </motion.button>
+          ))}
+        </motion.div>
+      )}
 
       {/* Mobile Navigation Styles */}
       <style jsx>{`
